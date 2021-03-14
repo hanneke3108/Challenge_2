@@ -1,3 +1,7 @@
+var today = new Date();
+
+
+
 //First grid-area: time
 var today, hours, minutes, seconds, dots;
 
@@ -31,12 +35,12 @@ window.onload = init;
 
 //Second grid-area: date
 var days = today.getDate();
-    if (days < 10){
+    if (days < 10) {
         days = '0' + days;
 }
 
 var months = today.getMonth();
-    if (months < 10){
+    if (months < 10) {
         months = '0' + (months+1);
 }
 
