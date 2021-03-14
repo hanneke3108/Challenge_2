@@ -1,17 +1,31 @@
-var today = new Date();
-
 //First grid-area: time
-var seconds = today.getSeconds();
-    if (seconds < 10){
-        seconds = '0' + seconds;
+var today, hours, minutes, seconds, dots;
+
+function init() {
+    dots = document.getElementById('time');
+    letTheClockWork();
 }
 
-var minutes = today.getMinutes();
-    if (minutes < 10){
-        minutes = '0' + minutes;
+function addZero(number) {
+    if (number < 10) {
+        number = '0' + number;
+    }
+    return number;
 }
 
-document.getElementById('time').innerHTML = today.getHours() + ':' + minutes + ':' + seconds
+function letTheClockWork() {
+    today = new Date();
+    if (hours < 0) {
+        hours += 24;
+    }
+    hours = addZero(today.getHours());
+    minutes = addZero(today.getMinutes());
+    seconds = addZero(today.getSeconds());
+    dots.innerHTML = hours + ':' + minutes + ':' + seconds;
+    var id = setTimeout('letTheClockWork()', 1000);
+}
+
+window.onload = init;
 
 
 
@@ -36,84 +50,3 @@ var weekDays = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijda
 var daysOfTheWeek = weekDays[today.getDay()];
 
 document.getElementById('day').innerHTML = daysOfTheWeek;
-
-
-
-
-
-//First grid-area: time (source: https://www.phphulp.nl/php/forum/topic/javascript-klok-5-uur/25247/)
-var tijd, u, m, s;
-var p;
-function init () {
-    p = document.getElementById ('time');
-    set_time ();
-}
-function voorloopnul (getal) {
-    if (getal < 10) return ('0' + getal);
-    return getal;
-}
-function set_time () {
-    tijd = new Date ();
-    u = tijd.getHours ();
-    if (u < 0) u += 24;
-    u = voorloopnul (u);
-    m = voorloopnul (tijd.getMinutes ());
-    s = voorloopnul (tijd.getSeconds ());
-    p.innerHTML = u + ':' + m + ':' + s;
-    var id = setTimeout ('set_time ()', 1000);
-}
-window.onload = init;
-
-
-
-
-
-//var seconds = 0;
-//var stopwatchHandle = false;
-//
-//function count(){
-//    seconds++;
-//    document.getElementById('time').innerHTML = seconds;
-//}
-//
-//document.getElementById('start').onclick = function(){
-//    if (stopwatchHandle == false){
-//        count();
-//        stopwatchHandle = setInterval(count, 1000);
-//    }
-//};
-
-
-
-
-
-
-//var seconds = 0;
-//var stopwatchHandle = false;
-//
-//function count(){
-//	seconds++;
-//	console.log(seconds);
-//    document.getElementById('time').innerHTML = seconds;
-//}
-
-//document.getElementById('tick').onclick = function(){
-//    count();
-//};
-
-//count();
-//count();
-
-//document.getElementById('start').onclick = function(){
-//    if (stopwatchHandle == false){
-//        count();
-//        stopwatchHandle = setInterval(count, 1000);
-//    }
-//};
-//
-//document.getElementById('stop').onclick = function(){
-//    clearInterval(stopwatchHandle);
-//    stopwatchHandle = false;
-//};
-
-//resetknop
