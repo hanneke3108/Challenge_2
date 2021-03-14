@@ -43,7 +43,7 @@ var stopwatchHandle = false;
 function count(){
 	seconds++;
 	console.log(seconds);
-    document.getElementById('clock').innerHTML = seconds;
+    document.getElementById('time').innerHTML = seconds;
 }
 
 //document.getElementById('tick').onclick = function(){
