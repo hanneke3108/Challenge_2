@@ -40,6 +40,34 @@ document.getElementById('day').innerHTML = daysOfTheWeek;
 
 
 
+
+//First grid-area: time (source: https://www.phphulp.nl/php/forum/topic/javascript-klok-5-uur/25247/)
+var tijd, u, m, s;
+var p;
+function init () {
+    p = document.getElementById ('time');
+    set_time ();
+}
+function voorloopnul (getal) {
+    if (getal < 10) return ('0' + getal);
+    return getal;
+}
+function set_time () {
+    tijd = new Date ();
+    u = tijd.getHours ();
+    if (u < 0) u += 24;
+    u = voorloopnul (u);
+    m = voorloopnul (tijd.getMinutes ());
+    s = voorloopnul (tijd.getSeconds ());
+    p.innerHTML = u + ':' + m + ':' + s;
+    var id = setTimeout ('set_time ()', 1000);
+}
+window.onload = init;
+
+
+
+
+
 //var seconds = 0;
 //var stopwatchHandle = false;
 //
