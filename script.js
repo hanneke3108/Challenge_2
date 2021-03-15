@@ -29,8 +29,6 @@ function letTheClockWork() {
     var id = setTimeout('letTheClockWork()', 1000);
 }
 
-window.onload = init;
-
 
 
 //Second grid-area: date
@@ -58,4 +56,15 @@ document.getElementById('day').innerHTML = daysOfTheWeek;
 
 
 //Time of the day
-document.getElementById('time').style.backgroundColor = 'red';
+function changeBg(color) {
+    if (hours >= 9) {
+        document.getElementsByClassName('bg')[3].style.backgroundColor = '#28608D';
+    } if else (hours <= 9) {
+        document.getElementsByClassName('bg')[3].style.backgroundColor = '#05102B';
+    } else {
+        document.getElementsByClassName('bg')[3].style.backgroundColor = '#3FD7D7';
+    }
+    return color;
+}
+
+window.onload = init(), changeBg();
