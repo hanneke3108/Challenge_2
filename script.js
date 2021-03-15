@@ -57,14 +57,17 @@ document.getElementById('day').innerHTML = daysOfTheWeek;
 
 //Time of the day
 function changeBg(color) {
-    if (hours >= 9) {
-        document.getElementsByClassName('bg')[3].style.backgroundColor = '#28608D';
-    } if else (hours <= 9) {
-        document.getElementsByClassName('bg')[3].style.backgroundColor = '#05102B';
-    } else {
+    var today2 = new Date();
+    var hours = today2.getHours();
+    if (hours >= 6 && hours <= 17) {
         document.getElementsByClassName('bg')[3].style.backgroundColor = '#3FD7D7';
+    } else if (hours >= 18 && hours <= 22) {
+        document.getElementsByClassName('bg')[3].style.backgroundColor = '#28608D';
+    } else {
+        document.getElementsByClassName('bg')[3].style.backgroundColor = '#05102B';
     }
     return color;
 }
 
-window.onload = init(), changeBg();
+init();
+changeBg();
