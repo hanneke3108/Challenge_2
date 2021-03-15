@@ -28,12 +28,13 @@ header {
     grid-template-areas: 
         "time"
         "date"
-        "day"; 
+        "day"
+        "season"; 
 }
 
-.time_bg, .date_bg, .day_bg {
+.bg {
     background-color: #3FD7D7;
-    border: 2px solid white;
+    border: 0px solid white;
     text-align: center;
 }
 
@@ -49,6 +50,10 @@ header {
     grid-area: day;
 }
 
+.season_bg {
+    grid-area: season;
+}
+
 h1 {
     font-size: 40px;
     color: white;
@@ -62,7 +67,8 @@ h1 {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
             "time time"
-            "date day"; 
+            "date day"
+            "season season"; 
         overflow-x: hidden;
     }
 }
@@ -73,21 +79,20 @@ h1 {
         grid-gap: 15px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
-            "time date day"; 
+            "time date day"
+            "season . ."; 
         overflow-x: hidden;
     }
 }
 
 @media only screen and (min-width: 1351px){
-/*
     .container {
         display: grid;
         grid-gap: 15px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
-            "time date day"; 
+            "time date day season"; 
         overflow-x: hidden;
     }
-*/
 }
 

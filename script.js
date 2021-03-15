@@ -44,7 +44,7 @@ var months = today.getMonth();
         months = '0' + (months+1);
 }
 
-document.getElementById('date').innerHTML = days + ' / ' + months + ' / ' + today.getFullYear()
+document.getElementById('date').innerHTML = days + '/' + months + '/' + today.getFullYear()
 
 
 
@@ -54,3 +54,8 @@ var weekDays = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijda
 var daysOfTheWeek = weekDays[today.getDay()];
 
 document.getElementById('day').innerHTML = daysOfTheWeek;
+
+
+
+//Time of the day
+document.getElementById('time').style.backgroundColor = 'red';
