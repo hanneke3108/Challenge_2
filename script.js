@@ -59,12 +59,18 @@ document.getElementById('day').innerHTML = daysOfTheWeek;
 function changeBg(color) {
     var today2 = new Date();
     var hours = today2.getHours();
-    if (hours >= 6 && hours <= 17) {
+    if (hours >= 6 && hours <= 12) {
         document.getElementsByClassName('bg')[3].style.backgroundColor = '#3FD7D7';
-    } else if (hours >= 18 && hours <= 22) {
+        document.getElementById('season').innerHTML = 'ochtend';
+    } else if (hours >= 13 && hours <= 18) {
+        document.getElementsByClassName('bg')[3].style.backgroundColor = '#3FD7D7';
+        document.getElementById('season').innerHTML = 'middag';
+    } else if (hours >= 19 && hours <= 23) {
         document.getElementsByClassName('bg')[3].style.backgroundColor = '#28608D';
+        document.getElementById('season').innerHTML = 'avond';
     } else {
         document.getElementsByClassName('bg')[3].style.backgroundColor = '#05102B';
+        document.getElementById('season').innerHTML = 'nacht';
     }
     return color;
 }
