@@ -29,7 +29,8 @@ header {
         "date"
         "day"
         "time"
-        "timeOfDay"; 
+        "timeOfDay"
+        "image"; 
 }
 
 .bg {
@@ -39,6 +40,7 @@ header {
 }
 
 .time_bg {
+    background-color: #ED8721;
     grid-area: time;
 }
 
@@ -56,6 +58,29 @@ header {
     grid-area: timeOfDay;
 }
 
+.image_bg {
+    grid-area: image;
+    background-image: url(images/space.jpg);
+    height: 300px;
+}
+
+#earth {
+    width: 90px;
+    position: relative;
+    top: 50px;
+    left: -80px;
+    animation: 10000ms turn infinite alternate ease-in-out;
+}
+
+@keyframes turn {
+    0% {
+        left: -80px;
+    }
+    100% {
+        left: 80px;
+    }
+}
+
 h1 {
     font-size: 40px;
     color: white;
@@ -70,8 +95,18 @@ h1 {
         grid-template-areas: 
             "date day"
             "time time"
-            "timeOfDay timeOfDay"; 
+            "timeOfDay timeOfDay"
+            "image image"; 
         overflow-x: hidden;
+    }
+    
+    @keyframes turn {
+        0% {
+            left: -180px;
+        }
+        100% {
+            left: 180px;
+        }
     }
 }
 
@@ -83,12 +118,18 @@ h1 {
         grid-template-areas: 
             "time time timeOfDay"
             "date date timeOfDay"
-            "day day timeOfDay";
-/*
-            "time date day"
-            "timeOfDay timeOfDay timeOfDay"; 
-*/
+            "day day timeOfDay"
+            "image image image";
         overflow-x: hidden;
+    }
+    
+    @keyframes turn {
+        0% {
+            left: -280px;
+        }
+        100% {
+            left: 280px;
+        }
     }
 }
 
@@ -99,7 +140,17 @@ h1 {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
             "time time timeOfDay"
-            "date day timeOfDay";
+            "date day timeOfDay"
+            "image image image";
         overflow-x: hidden;
+    }
+    
+    @keyframes turn {
+        0% {
+            left: -380px;
+        }
+        100% {
+            left: 380px;
+        }
     }
 }

@@ -47,7 +47,7 @@ document.getElementById('date').innerHTML = days + '/' + months + '/' + today.ge
 
 
 //Third grid-area: day
-var weekDays = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"];
+var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 var daysOfTheWeek = weekDays[today.getDay()];
 
@@ -61,16 +61,16 @@ function changeBg(color) {
     var hours = today2.getHours();
     if (hours >= 6 && hours <= 12) {
         document.getElementsByClassName('bg')[3].style.backgroundColor = '#3FD7D7';
-        document.getElementById('timeOfDay').innerHTML = 'ochtend';
+        document.getElementById('timeOfDay').innerHTML = 'Morning';
     } else if (hours >= 13 && hours <= 18) {
         document.getElementsByClassName('bg')[3].style.backgroundColor = '#3FD7D7';
-        document.getElementById('timeOfDay').innerHTML = 'middag';
+        document.getElementById('timeOfDay').innerHTML = 'Afternoon';
     } else if (hours >= 19 && hours <= 23) {
         document.getElementsByClassName('bg')[3].style.backgroundColor = '#28608D';
-        document.getElementById('timeOfDay').innerHTML = 'avond';
+        document.getElementById('timeOfDay').innerHTML = 'Evening';
     } else {
         document.getElementsByClassName('bg')[3].style.backgroundColor = '#05102B';
-        document.getElementById('timeOfDay').innerHTML = 'nacht';
+        document.getElementById('timeOfDay').innerHTML = 'Night';
     }
     return color;
 }
